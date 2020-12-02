@@ -1,9 +1,10 @@
 #!/bin/bash
 
-echo "[*] Compiling binary..."
-gcc -Wall -g $1 -o ../bin/$1.out
+echo "[*] Compiling..."
+gcc -c -ggdb $1 -o ../obj/$1.o
+gcc -c -ggdb helpers.c -o ../obj/helpers.o
 
-echo "[*] Generating obj file..."
-gcc -c $1 -o ../obj/$1.o
+echo "[*] Linking..."
+gcc -Wall -ggdb ../obj/helpers.o ../obj/$1.o -o ../bin/$1.out
 
 echo "[*] Done."
