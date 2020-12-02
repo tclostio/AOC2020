@@ -13,9 +13,11 @@ int main(int argc, char **argv)
 
     for(int i = 0; i < LENGTH; i++) {
         for (int j = i+1; j < LENGTH; j++) {
-            sum = lines[i] + lines[j];
+            for (int k = j+1; k < LENGTH; k++) {
+                sum = lines[i] + lines[j] + lines[k];
 
-            if (sum == 2020) printf("Result:  %d\n", lines[i] * lines[j]);
+                if (sum == 2020) printf("Result:  %d\n", lines[i] * lines[j] * lines[k]);
+            }
         }
     }
 

@@ -7,7 +7,7 @@
 #include <stdlib.h>
 
 int getlength(int);
-int LENGTH;
+int LENGTH; // i know i know
 
 /*
  * WARNING: You must still free the 'lines' allocated memory after use in your main routine.
@@ -40,7 +40,7 @@ int* readlines(char* filename)
 
     }
 
-    LENGTH = count;
+    LENGTH = count; // I KNOW
     return lines;
 }
 
