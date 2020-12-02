@@ -2,8 +2,8 @@ xmas = [1728 ,1954 ,1850 ,1825 ,1732 ,1536 ,1759 ,1877 ,1400 ,1579 ,1708 ,1047 ,
 
 for x in xmas:
   for y in xmas[1:]:
+    if (x + y) == 2020:
+      print(f"{x} * {y} = {x * y}")
     for z in xmas[2:]:
-      if (x + y) == 2020: 
-        print(f"{x} * {y} = {x * y}")
       if (x + y + z) == 2020: 
         print(f"{x} * {y} * {z} = {x * y * z}")
