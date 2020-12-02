@@ -14,7 +14,7 @@ object ReportRepair extends App {
     } yield solution
 
   val input = Source
-    .fromResource("/day1.txt")
+    .fromResource("day1.txt")
     .getLines
     .map(line => Try(line.toInt))
     .collect { case Success(entry) => entry }
