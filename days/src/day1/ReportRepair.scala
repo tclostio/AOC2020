@@ -40,10 +40,9 @@ object ReportRepair extends App {
 
     def collectFirst3[B](f: PartialFunction[(A, A, A), B]) = 
       seq.firstOpt(a =>
-        seq.firstOpt(b => 
-          seq.firstOpt(c => f.lift(a, b, c))
-        )
-      )
+      seq.firstOpt(b => 
+      seq.firstOpt(c => f.lift(a, b, c)
+    )))
   }
 
   def expenses3(entries: Seq[Int]) = 
