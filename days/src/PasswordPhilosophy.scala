@@ -1,5 +1,3 @@
-package day2
-
 import scala.io.Source
 import scala.util.Try
 import scala.util.Success
