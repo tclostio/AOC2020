@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-#include <regex.h>
 #include <stdbool.h>
 
 char **readCharLines(char*);
@@ -39,18 +38,7 @@ int main(int argc, char **argv)
 
     printf("Total1: %d\nTotal2: %d\n", total1, total2);
 
-    printf("Test!\n");
-    int test1 = 2;
-    int test2 = 9;
-    char test3 = 'c';
-    char *test4 = "ccccccccc";
-
-    bool testRes = is_correct_v2(test1, test2, test3, test4);
-
-    printf("%d\n", testRes);
-
     free(lines);
-
     return 0;
 }
 
