@@ -11,7 +11,8 @@ int getlength(int);
 int LENGTH; // i know i know
 
 /*
- * WARNING: You must still free the 'lines' allocated memory after use in your main routine.
+ * WARNING: the string returned by this function is malloc'd and needs
+ * to be free'd by the caller.
  */
 int *readlines(char *filename)
 {
@@ -81,5 +82,24 @@ char **readCharLines(char *filename)
     }
 
     return lines;
+}
+
+char* join_helper(char** in, size_t inlen, size_t inpos, size_t accum) {
+  if (inpos == inlen)
+    return strcpy(malloc(accum + 1) + accum, "");
+  else {
+    size_t mylen = strlen(in[inpos]);
+    return memcpy(
+      join_helper(in, inlen, inpos + 1, accum + mylen) - mylen,
+      in[inpos], mylen);
+  }
+}
+
+/*
+ * WARNING: The string returned by this function is malloc'd and needs
+ * to be free'd by the caller.
+ */
+char* join(char** in, size_t inlen) {
+  return join_helper(in, inlen, 0, 0);
 }
 

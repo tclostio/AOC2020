@@ -16,7 +16,7 @@ int main(int argc, char **argv)
     int min, max, total1, total2;
     char *pwd, *t1, *t2;
 
-    lines = readCharLines("../assets/input3.txt");
+    lines = readCharLines("../assets/day2.txt");
 
     for(int i = 0; i < LENGTH; i++) {
         pwd = strchr(lines[i], ':');

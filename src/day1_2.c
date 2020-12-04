@@ -9,13 +9,15 @@ int main(int argc, char **argv)
     int* lines;
     int sum;
 
-    lines = readlines("../assets/input1.txt");
+    lines = readlines("../assets/day1_2.txt");
 
     for(int i = 0; i < LENGTH; i++) {
         for (int j = i+1; j < LENGTH; j++) {
-            sum = lines[i] + lines[j];
+            for (int k = j+1; k < LENGTH; k++) {
+                sum = lines[i] + lines[j] + lines[k];
 
-            if (sum == 2020) printf("Result:  %d\n", lines[i] * lines[j]);
+                if (sum == 2020) printf("Result:  %d\n", lines[i] * lines[j] * lines[k]);
+            }
         }
     }
 
