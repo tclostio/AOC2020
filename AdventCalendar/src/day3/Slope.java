@@ -15,8 +15,8 @@ public class Slope {
 		System.out.println("");
 	}
 	
-	public static int counter(char[][] maze) {		//counts how many trees hit in maze
-		int total = 0;
+	public static long counter(char[][] maze) {		//counts how many trees hit in maze
+		long total = 0;
 		for(int i = 0; i < 323; i++) {
 			for (int j = 0; j < 31; j++) {
 				if (maze[i][j] == 'X') {
@@ -71,6 +71,7 @@ public class Slope {
 				maze4[i][j] = input.get(index++);
 				}
 		}
+		
 		solve(maze, 1,3,3,1);
 		System.out.println(counter(maze));
 		solve(maze1, 1,1,1,1);
@@ -82,8 +83,8 @@ public class Slope {
 		solve(maze4, 2,1,1,2);
 		System.out.println(counter(maze4));
 		
-		long total = (counter(maze)*counter(maze1)*counter(maze2)*counter(maze3));
-		System.out.println(total*counter(maze4));	//really large number, too big for Java
+		long total = (counter(maze)*counter(maze1)*counter(maze2)*counter(maze3)*counter(maze4));
+		System.out.println(total);	//really large number, too big for Java
 
 
 	}
