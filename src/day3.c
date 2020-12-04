@@ -10,7 +10,6 @@ extern int LENGTH; //this is jank as hell but it's a quick hack to keep a dynami
 int main(int argc, char **argv)
 {
     char **lines;
-    long result = 0;
     lines = readCharLines("../assets/day3.txt");
     findTrees(lines, 1, 1);
     findTrees(lines, 3, 1);
@@ -30,13 +29,10 @@ void findTrees(char **lines, int right, int down)
     for (int i = 0; i < LENGTH - down; i++) {
         cursor += right;
         if (cursor >= width) cursor = cursor - width;
-
         if (lines[i+down][cursor] == '#') trees += 1;
     }
 
     printf("%d\n", trees);
-
     trees = 0;
-    cursor = 0;
 }
 
