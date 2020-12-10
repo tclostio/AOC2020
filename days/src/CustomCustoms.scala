@@ -11,10 +11,11 @@ object CustomCustoms extends App {
 
   val questionsWithAnyYes = 
     input
-      .map(_            // get the coutnt for each group
-        .map(_.toSet)   // turn each individual's answers into a set
-        .reduce(_ ++ _) // union of the group's answers
-        .size           // count the answers for the group
+      .map(group =>
+        group
+          .map(individual => individual.toSet)              // turn each individual's answers into a set
+          .reduce((person1, person2) => person1 ++ person2) // union of the group's answers
+          .size                                             // count the answers for the group
       )
       .sum              
 
