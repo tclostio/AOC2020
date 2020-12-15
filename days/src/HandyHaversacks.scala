@@ -5,7 +5,7 @@ object HandyHaversacks extends App {
 
   val input = 
     Source.fromResource("day7.txt")
-      .getLines
+      .getLines()
       .map(_.split(" bags contain ")) // split rule into inner and outer bags
       .map { 
         case Array(outerBag, "no other bags.")  => 

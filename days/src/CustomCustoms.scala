@@ -5,7 +5,7 @@ object CustomCustoms extends App {
   val input = 
     LazyList.from(
       Source.fromResource("day6.txt")
-        .getLines
+        .getLines()
     )
       .split("")
 

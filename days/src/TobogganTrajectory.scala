@@ -19,7 +19,7 @@ case class GridPosition(x: Int, y: Int, grid: Grid) {
 }
 
 object TobogganTrajectory extends App {
-  val inputLines = Source.fromResource("day3.txt").getLines.toSeq
+  val inputLines = Source.fromResource("day3.txt").getLines().toSeq
 
   val input = 
     inputLines

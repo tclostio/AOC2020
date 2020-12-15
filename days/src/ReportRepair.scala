@@ -14,7 +14,7 @@ object ReportRepair extends App {
 
   val input = Source
     .fromResource("day1.txt")
-    .getLines
+    .getLines()
     .map(line => Try(line.toInt))
     .collect { case Success(entry) => entry }
     .toSeq
@@ -33,16 +33,6 @@ object ReportRepair extends App {
       solution = e1 * e2 * e3 if e1 + e2 + e3 == 2020
     } yield solution
   */
-
-  implicit class SeqSyntax[A](val seq: Seq[A]) extends AnyVal {
-    def firstOpt[B](f: A => Option[B]) = seq.collectFirst(Function.unlift(f))
-
-    def collectFirst3[B](f: PartialFunction[(A, A, A), B]) = 
-      seq.firstOpt(a =>
-      seq.firstOpt(b => 
-      seq.firstOpt(c => f.lift(a, b, c)
-    )))
-  }
 
   /*
   def expenses3(entries: Seq[Int]) = 

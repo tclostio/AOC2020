@@ -1,12 +1,12 @@
 import scala.io.Source
 import scala.annotation.tailrec
-import scala.collection.immutable.Vector
+
 object HandheldHalting extends App {
   val instruction = raw"(\w+) ([+-]\d+)".r
 
   val input = 
     Source.fromResource("day8.txt")
-      .getLines
+      .getLines()
       .map { case instruction(operation, param) => (operation, param.toInt) }
       .toVector
       

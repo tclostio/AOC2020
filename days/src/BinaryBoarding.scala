@@ -4,7 +4,7 @@ import scala.annotation.tailrec
 object BinaryBoarding extends App {
   val seatLayout = Seq.fill(128)(0 to 7).zipWithIndex
 
-  def input = Source.fromResource("day5.txt").getLines
+  def input = Source.fromResource("day5.txt").getLines()
 
   @tailrec
   def computeSeatCoordinates(
