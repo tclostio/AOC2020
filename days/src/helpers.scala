@@ -38,6 +38,9 @@ object helpers {
       list.firstOpt(b => 
       list.firstOpt(c => f.lift(a, b, c)
     )))
+
+    def foldWhile[B](acc: B)(f: PartialFunction[(B, A), B]) = 
+      helpers.foldWhile(list)(acc)(f)
   }
 
   implicit class IteratorSyntax[A](val it: Iterator[A]) extends AnyVal {
