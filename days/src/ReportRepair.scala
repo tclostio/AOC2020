@@ -48,11 +48,10 @@ object ReportRepair extends App {
       entries2: Seq[Int],
       entries3: Seq[Int]
     ): Int = (entries1, entries2, entries3) match {
-      case (e1 +: _, e2 +: _, e3 +: _) if e1 + e2 + e3 == 2020 => e1 * e2 * e3
-      case (es1, es2, _ +: es3) => recurse(es1, es2, es3)
-      case (es1, _ +: es2, Nil) => recurse(es1, es2, entries)
-      case (_ +: es1, Nil, _)   => recurse(es1, entries, entries)
-      case _ => -1
+      case (e1 +: _ , e2 +: _ , e3 +: _  ) if e1 + e2 + e3 == 2020 => e1 * e2 * e3
+      case (es1     , es2     , _  +: es3) => recurse(es1, es2, es3)
+      case (es1     , _ +: es2,   Nil    ) => recurse(es1, es2, entries)
+      case (_ +: es1, Nil     ,    _     ) => recurse(es1, entries, entries)
     }
 
     recurse(entries, entries, entries)

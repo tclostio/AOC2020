@@ -24,7 +24,7 @@ object helpers {
         entries2: Seq[A]
       ): Option[B] =  
         (entries1, entries2) match {
-          case (e1 +: _, e2 +: _) if f.isDefinedAt(e1, e2) => f.lift(e1, e2) // 
+          case (e1 +: _, e2 +: _) if f.isDefinedAt(e1, e2) => f.lift(e1, e2)
           case (es1, _ +: es2) => recurse(es1, es2)
           case (_ +: es1, Nil) => recurse(es1, list)
           case _ => None

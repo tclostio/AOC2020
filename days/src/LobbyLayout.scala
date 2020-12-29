@@ -17,17 +17,6 @@ object LobbyLayout extends App {
       case s"ne$t" => "ne" :: delimit(t)
     }
 
-  /*
-  grid system working like this
-      / \ /  \
-    |0,1|1,-1|
-  /  \ / \ /  \
-  |-1,0|0,0|0, 1|
-  \  / \ / \  /
-    |0,1|1,1|
-      \ / \ /
-  in other words, NW -> N, SW => S
-  */
   def coordinateDelta(direction: String) = direction match {
     case "e"  => ( 1, -1,  0)
     case "se" => ( 0, -1,  1)
